@@ -17,4 +17,5 @@
   .hero-h1 { font-size: 44px; }
   .ves-strips { height: 280px; flex-direction: column; }
   .dv-title { font-size: 30px; }
+  .dt-grid { grid-template-columns: 1fr; gap: 32px; }
 }

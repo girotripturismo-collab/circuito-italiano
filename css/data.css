@@ -1,0 +1,24 @@
+/* ══ DATA MODULE ════════════════════════ */
+#s-data {
+  background: var(--cream);
+  padding: 88px 0;
+}
+.dt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
+.dt-title { font-family: var(--ff-serif); font-size: 38px; color: var(--blue); margin-bottom: 16px; }
+.dt-list { list-style: none; margin: 24px 0; }
+.dt-list li {
+  display: flex; justify-content: space-between;
+  padding: 14px 0; border-bottom: 1px solid var(--border);
+  font-size: 15px;
+}
+.dt-list li strong { color: var(--blue); }
+.dt-img { border-radius: 4px; overflow: hidden; }
+.dt-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.cd-timer { display: flex; gap: 16px; margin-top: 28px; }
+.cd-unit { text-align: center; }
+.cd-unit strong {
+  display: block; font-family: var(--ff-serif); font-size: 32px; color: var(--orange);
+}
+.cd-unit span { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); }
+.cd-expired { font-size: 14px; color: var(--orange); font-weight: 700; }
