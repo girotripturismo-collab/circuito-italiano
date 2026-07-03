@@ -1,0 +1,37 @@
+/* ══ LA DOLCE VITA — seção temática ═══════ */
+#s-dolcevita {
+  background: var(--cinema-bg); color: var(--white);
+  padding: 100px 0 80px;
+}
+.dv-head { text-align: center; max-width: 720px; margin: 0 auto 56px; }
+.dv-title {
+  font-family: var(--ff-serif); font-size: 44px; font-weight: 700;
+  color: var(--white); margin-bottom: 18px; line-height: 1.15;
+}
+.dv-sub { font-size: 16px; font-weight: 300; color: rgba(255,255,255,.7); line-height: 1.75; }
+
+.ves-strips { display: flex; gap: 4px; height: 420px; }
+.ves-strip {
+  flex: 1; position: relative; background-size: cover; background-position: center;
+  cursor: pointer; overflow: hidden;
+  clip-path: inset(0 50% 0 50%);
+  transition: flex 0.6s var(--ease-out), clip-path 0.9s var(--ease-out);
+}
+.ves-strip.open   { clip-path: inset(0 0 0 0); }
+.ves-strip.act     { flex: 2.4; }
+.ves-strip-info {
+  position: absolute; left: 0; right: 0; bottom: 0;
+  padding: 20px 16px;
+  background: linear-gradient(to top, rgba(0,0,0,.75), transparent);
+  opacity: 0; transition: opacity 0.3s ease;
+}
+.ves-strip.act .ves-strip-info { opacity: 1; }
+.ves-strip-title { font-family: var(--ff-serif); font-size: 18px; color: var(--white); }
+.ves-strip-sub { font-size: 11px; color: rgba(255,255,255,.6); margin-top: 2px; }
+
+.ves-dots { display: flex; justify-content: center; gap: 8px; margin-top: 24px; }
+.ves-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: rgba(255,255,255,.25); cursor: pointer; transition: background 0.2s ease;
+}
+.ves-dot.act { background: var(--orange); }

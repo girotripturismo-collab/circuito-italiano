@@ -1,11 +1,13 @@
 import {
   initHeader,
   initReveal,
-  initSmoothScroll
+  initSmoothScroll,
+  initStrips
 } from './index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initReveal();
+  initStrips();
   initSmoothScroll();
 });
