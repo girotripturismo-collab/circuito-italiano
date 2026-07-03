@@ -1,0 +1,101 @@
+/* ═══════════════════════════════════════
+   BASE — Design tokens, reset, utilities
+   Contract: CSS custom properties are the
+   shared interface between all modules.
+═══════════════════════════════════════ */
+
+:root {
+  /* Brand — Girotrip (igual em todas as LPs) */
+  --blue:        #1f4c94;
+  --blue-d:      #163a73;
+  --blue-l:      #2a5faf;
+  --orange:      #ff7f00;
+  --orange-d:    #e06f00;
+
+  /* Neutrals */
+  --white:       #ffffff;
+  --off:         #f5f5f5;
+  --cream:       #faf9f7;
+  --dark:        #1a1a2e;
+  --text:        #2c2c3e;
+  --muted:       #666677;
+  --border:      #e8e8e8;
+
+  /* La Dolce Vita — seção temática (equivalente ao --cinema-bg) */
+  --cinema-bg:   #3D2817;
+
+  /* Typography */
+  --ff-serif:    'Libre Baskerville', 'Baskerville URW', Baskerville, Georgia, serif;
+  --ff-sans:     'Montserrat', system-ui, sans-serif;
+
+  /* Layout */
+  --max:         1200px;
+  --pad:         40px;
+
+  /* Motion */
+  --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --dur-fast:    0.3s;
+  --dur-med:     0.6s;
+  --dur-slow:    1s;
+}
+
+/* Reset */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  overflow-x: clip; /* nunca hidden — quebraria position:sticky */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+body {
+  font-family: var(--ff-sans);
+  color: var(--text);
+  background: var(--white);
+  line-height: 1.6;
+  overflow-x: clip;
+}
+img { max-width: 100%; display: block; }
+a   { text-decoration: none; color: inherit; }
+button { font-family: var(--ff-sans); cursor: pointer; }
+
+/* Container */
+.wrap {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+/* Typography helpers */
+.serif    { font-family: var(--ff-serif); }
+.overline {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .18em; text-transform: uppercase;
+  color: var(--orange); display: block; margin-bottom: 14px;
+}
+.overline--light { color: rgba(255,255,255,.6); }
+.rule {
+  width: 40px; height: 3px;
+  background: var(--orange);
+  margin-bottom: 20px;
+}
+.rule--white { background: rgba(255,255,255,.5); }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  padding: 15px 36px; border: none; border-radius: 0;
+  font-family: var(--ff-sans); font-size: 13px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  cursor: pointer; transition: background var(--dur-fast), transform var(--dur-fast);
+  white-space: nowrap;
+}
+.btn-orange { background: var(--orange); color: var(--white); }
+.btn-orange:hover { background: var(--orange-d); transform: translateY(-2px); }
+.btn-outline-w { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.4); }
+.btn-outline-w:hover { background: rgba(255,255,255,.08); border-color: var(--white); }
+.btn-outline-b { background: transparent; color: var(--blue); border: 1.5px solid var(--blue); }
+.btn-outline-b:hover { background: var(--blue); color: var(--white); }
+.btn-lg { padding: 18px 48px; font-size: 14px; }
+.btn-full { width: 100%; padding: 18px; justify-content: center; }

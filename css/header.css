@@ -1,0 +1,35 @@
+/* ══ HEADER MODULE ══════════════════════ */
+#hdr {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  padding: 18px 0;
+  transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+}
+#hdr.solid {
+  background: rgba(255,255,255,.97);
+  padding: 10px 0;
+  box-shadow: 0 1px 0 var(--border), 0 4px 24px rgba(0,0,0,.06);
+  backdrop-filter: blur(12px);
+}
+.hdr-in { display: flex; align-items: center; justify-content: space-between; }
+
+#logo-w { height: 90px; width: auto; transition: height 0.4s ease; }
+#logo-c { height: 90px; width: auto; display: none; transition: height 0.4s ease; }
+#hdr.solid #logo-w { display: none; height: 72px; }
+#hdr.solid #logo-c { display: block; height: 72px; }
+
+.hdr-nav { display: flex; align-items: center; gap: 8px; }
+.hdr-ghost {
+  padding: 8px 20px; border: 1px solid rgba(255,255,255,.45);
+  color: var(--white); font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  background: transparent; transition: all 0.2s ease; cursor: pointer;
+}
+#hdr.solid .hdr-ghost { border-color: var(--blue); color: var(--blue); }
+.hdr-ghost:hover { background: rgba(255,255,255,.1); }
+#hdr.solid .hdr-ghost:hover { background: var(--blue); color: var(--white); }
+
+/* Scroll progress bar */
+#scroll-bar {
+  position: fixed; top: 0; left: 0; height: 3px; width: 0;
+  background: var(--orange); z-index: 1001; transition: width 0.1s linear;
+}

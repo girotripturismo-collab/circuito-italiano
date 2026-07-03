@@ -1,0 +1,7 @@
+/* ══ FOOTER MODULE ══════════════════════ */
+#ft {
+  background: var(--dark); color: rgba(255,255,255,.55);
+  padding: 40px 0; text-align: center; font-size: 12px;
+}
+#ft a { color: rgba(255,255,255,.75); }
+#ft a:hover { color: var(--orange); }
