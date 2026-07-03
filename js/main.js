@@ -4,7 +4,8 @@ import {
   initSmoothScroll,
   initStrips,
   initCountdown,
-  initRoteiro
+  initRoteiro,
+  initTickers
 } from './index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,4 +15,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initRoteiro();
   initCountdown();
   initSmoothScroll();
+  initTickers();
 });
