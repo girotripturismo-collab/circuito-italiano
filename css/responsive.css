@@ -18,4 +18,11 @@
   .ves-strips { height: 280px; flex-direction: column; }
   .dv-title { font-size: 30px; }
   .dt-grid { grid-template-columns: 1fr; gap: 32px; }
+  .rot-pin-outer { height: auto; }
+  .rot-pin-inner { position: static; height: auto; }
+  .rot-track { flex-direction: column; width: 100%; transform: none !important; }
+  .rot-panel { width: 100%; height: 70vh; }
+  .rot-panel-name { font-size: 40px; }
+  .rot-dots { display: none; }
+  .rot-counter { display: none; }
 }

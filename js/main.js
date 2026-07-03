@@ -3,13 +3,15 @@ import {
   initReveal,
   initSmoothScroll,
   initStrips,
-  initCountdown
+  initCountdown,
+  initRoteiro
 } from './index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initReveal();
   initStrips();
+  initRoteiro();
   initCountdown();
   initSmoothScroll();
 });
