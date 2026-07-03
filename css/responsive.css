@@ -15,6 +15,7 @@
   #hdr.solid #logo-w, #hdr.solid #logo-c { height: 48px; }
   .hero-bg { background-attachment: scroll; }
   .hero-h1 { font-size: 44px; }
+  #s-pv { background-attachment: scroll; }
   .ves-strips { height: 280px; flex-direction: column; }
   .dv-title { font-size: 30px; }
   .dt-grid { grid-template-columns: 1fr; gap: 32px; }
