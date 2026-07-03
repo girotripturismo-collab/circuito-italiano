@@ -1,12 +1,13 @@
 import {
   initHeader,
   initReveal,
-  initSmoothScroll,
   initStrips,
-  initCountdown,
   initRoteiro,
-  initTickers,
-  initFAQ
+  initCountdown,
+  initFAQ,
+  initSmoothScroll,
+  initFormActions,
+  initTickers
 } from './index.js';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -15,7 +16,8 @@ document.addEventListener('DOMContentLoaded', () => {
   initStrips();
   initRoteiro();
   initCountdown();
-  initSmoothScroll();
-  initTickers();
   initFAQ();
+  initSmoothScroll();
+  initFormActions();
+  initTickers();
 });

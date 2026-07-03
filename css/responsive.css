@@ -29,4 +29,5 @@
   .gp-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 160px); }
   .inv-items { grid-template-columns: 1fr; }
   .inv-price-main { font-size: 36px; }
+  .f-box { padding: 28px 20px; margin: 0 var(--pad); }
 }

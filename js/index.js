@@ -6,3 +6,4 @@ export { initCountdown } from './countdown.js';
 export { initRoteiro } from './roteiro.js';
 export { initTickers } from './tickers.js';
 export { initFAQ } from './faq.js';
+export { initFormActions, nextStep, prevStep, send } from './form.js';

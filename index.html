@@ -438,7 +438,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </div>
 </section>
-<section id="s-form"></section>
+<section id="s-form">
+  <div class="wrap">
+    <div class="f-head">
+      <h2 class="f-title from-left">Complete o formulário</h2>
+      <p class="f-sub from-right">Vamos dar início à nossa conversa via WhatsApp. Estamos animados para atendê-lo!</p>
+    </div>
+    <div class="f-progress">
+      <div class="f-pd act" id="pd1">1</div>
+      <div class="f-pd" id="pd2">2</div>
+    </div>
+    <form id="form-lead-circuito-italiano" method="get" action="https://girotripturismo.com.br/lps/circuito-italiano-obrigado/">
+      <input type="hidden" id="h-utm_source" name="utm_source">
+      <input type="hidden" id="h-utm_medium" name="utm_medium">
+      <input type="hidden" id="h-utm_campaign" name="utm_campaign">
+      <input type="hidden" id="h-utm_content" name="utm_content">
+      <input type="hidden" id="h-utm_term" name="utm_term">
+      <input type="hidden" id="h-gclid" name="gclid">
+      <input type="hidden" id="h-fbclid" name="fbclid">
+      <input type="hidden" id="h-campaign_id" name="campaign_id">
+      <input type="hidden" id="h-adgroup_id" name="adgroup_id">
+      <input type="hidden" id="h-creative_id" name="creative_id">
+      <input type="hidden" id="h-keyword" name="keyword">
+      <input type="hidden" id="h-device" name="device">
+      <input type="hidden" id="h-page_url" name="page_url">
+      <input type="hidden" id="h-referrer" name="referrer">
+
+      <div class="f-box">
+        <div class="f-step act" id="fs1">
+          <div class="f-field"><label for="nome">Nome</label><input type="text" id="nome" name="nome" required></div>
+          <div class="f-field"><label for="email">E-mail</label><input type="email" id="email" name="email" required></div>
+          <div class="f-field">
+            <label for="wpp">WhatsApp</label>
+            <div class="f-tel-wrap"><span class="f-tel-prefix">+55</span><input type="tel" id="wpp" name="wpp" placeholder="(11) 91234-5678" required></div>
+          </div>
+          <button class="btn btn-orange btn-full" type="button" data-action="next-step">Quero receber as informações</button>
+        </div>
+
+        <div class="f-step" id="fs2">
+          <div class="f-field">
+            <label for="pss">Quantas pessoas vão viajar?</label>
+            <select id="pss" name="quantas_pessoas" required>
+              <option value="">Selecione</option>
+              <option value="1">1 pessoa</option>
+              <option value="2">2 pessoas</option>
+              <option value="3+">3 ou mais</option>
+            </select>
+          </div>
+          <div class="f-field">
+            <label for="saida">Qual saída prefere?</label>
+            <select id="saida" name="saida_preferida" required>
+              <option value="">Selecione</option>
+              <option value="maio-2027">Maio 2027 (05 a 20/05)</option>
+              <option value="junho-2027">Junho 2027 (09 a 24/06)</option>
+              <option value="setembro-2027">Setembro 2027 (01 a 16/09)</option>
+              <option value="ainda-nao-sei">Ainda não sei</option>
+            </select>
+          </div>
+          <div class="f-field">
+            <label for="ori">Como ficou sabendo da Girotrip?</label>
+            <select id="ori" name="como_ficou_sabendo" required>
+              <option value="">Selecione</option>
+              <option value="instagram">Instagram</option>
+              <option value="facebook">Facebook</option>
+              <option value="google">Google</option>
+              <option value="indicacao">Indicação de amigo/familiar</option>
+              <option value="outro">Outro</option>
+            </select>
+          </div>
+          <button class="btn btn-orange btn-full" type="submit" data-action="send-form">Quero receber valores e detalhes</button>
+          <button class="f-back" type="button" data-action="prev-step">← Voltar</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
 
 <!-- ══ FOOTER ══════════════════════════ -->
 <footer id="ft">
