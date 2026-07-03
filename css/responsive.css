@@ -25,4 +25,5 @@
   .rot-panel-name { font-size: 40px; }
   .rot-dots { display: none; }
   .rot-counter { display: none; }
+  .gp-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 160px); }
 }
