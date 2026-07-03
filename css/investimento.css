@@ -1,0 +1,22 @@
+/* ══ INVESTIMENTO MODULE ════════════════
+   Value stack primeiro, preço depois —
+   estratégia definida no PRD §7.2/§2.
+═══════════════════════════════════════ */
+#s-inv { background: var(--cream); padding: 96px 0; }
+.inv-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.inv-title { font-family: var(--ff-serif); font-size: 40px; color: var(--blue); margin-bottom: 14px; }
+.inv-items {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 32px;
+  max-width: 920px; margin: 0 auto 56px;
+}
+.inv-item { display: flex; align-items: flex-start; gap: 12px; padding: 14px 0; }
+.inv-item-icon { font-size: 20px; flex-shrink: 0; }
+.inv-item-text { font-size: 14px; color: var(--text); line-height: 1.5; }
+.inv-price-box {
+  max-width: 560px; margin: 0 auto; text-align: center;
+  background: var(--white); border: 1px solid var(--border);
+  padding: 44px 32px;
+}
+.inv-price-label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.inv-price-main { font-family: var(--ff-serif); font-size: 48px; color: var(--orange); margin-bottom: 6px; }
+.inv-price-alt { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
