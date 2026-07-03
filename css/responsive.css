@@ -13,4 +13,6 @@
 @media (max-width: 768px) {
   #logo-w, #logo-c { height: 56px; }
   #hdr.solid #logo-w, #hdr.solid #logo-c { height: 48px; }
+  .hero-bg { background-attachment: scroll; }
+  .hero-h1 { font-size: 44px; }
 }

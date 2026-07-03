@@ -1,0 +1,57 @@
+/* ══ HERO MODULE ════════════════════════ */
+#hero {
+  position: relative; min-height: 100vh;
+  display: flex; align-items: center;
+  padding: 140px 0 100px;
+  background: var(--blue-d);
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('../circuito-italiano-hero.jpg');
+  background-size: cover; background-position: center;
+  background-attachment: fixed;
+}
+.hero-bg::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(110deg,
+    rgba(22,58,115,.96) 0%,
+    rgba(31,76,148,.82) 45%,
+    rgba(31,76,148,.45) 70%,
+    rgba(31,76,148,.08) 100%
+  );
+}
+.hero-content { position: relative; z-index: 2; max-width: 820px; }
+
+.hero-kicker {
+  display: inline-block;
+  font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase;
+  color: var(--orange); padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255,127,0,.35);
+  margin-bottom: 32px;
+}
+.hero-h1 {
+  font-family: var(--ff-serif);
+  font-size: 84px; font-weight: 400; line-height: 1.04;
+  color: var(--white); margin-bottom: 28px; letter-spacing: -.02em;
+}
+.hero-h1 span { display: block; }
+.hero-h1 em { font-style: italic; color: var(--orange); font-weight: 300; }
+.hero-sub {
+  font-size: 18px; font-weight: 300; line-height: 1.75;
+  color: rgba(255,255,255,.7);
+  margin-bottom: 44px; max-width: 560px;
+}
+.hero-cta { margin-bottom: 60px; }
+.hero-data {
+  display: flex; align-items: center; gap: 36px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255,255,255,.12);
+  flex-wrap: wrap;
+}
+.hero-data-item span {
+  display: block; font-size: 10px; font-weight: 700;
+  letter-spacing: .14em; text-transform: uppercase;
+  color: rgba(255,255,255,.38); margin-bottom: 3px;
+}
+.hero-data-item strong { font-size: 13px; font-weight: 600; color: var(--white); }
