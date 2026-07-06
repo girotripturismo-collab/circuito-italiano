@@ -18,7 +18,9 @@
   #s-pv { background-attachment: scroll; }
   .ves-strips { height: 280px; flex-direction: column; }
   .dv-title { font-size: 30px; }
-  .dt-grid { grid-template-columns: 1fr; gap: 32px; }
+  .dt-cards { grid-template-columns: 1fr; }
+  .cd-timer { gap: 12px; }
+  .cd-unit strong { font-size: 32px; }
   .rot-title { font-size: 28px; }
   .rot-thumb { width: 52px; height: 52px; }
   .rot-q { gap: 14px; }

@@ -14,9 +14,9 @@
 <link rel="stylesheet" href="css/base.css?v=2">
 <link rel="stylesheet" href="css/animations.css?v=1">
 <link rel="stylesheet" href="css/header.css?v=1">
-<link rel="stylesheet" href="css/hero.css?v=4">
-<link rel="stylesheet" href="css/dolcevita.css?v=2">
-<link rel="stylesheet" href="css/data.css?v=2">
+<link rel="stylesheet" href="css/hero.css?v=5">
+<link rel="stylesheet" href="css/dolcevita.css?v=3">
+<link rel="stylesheet" href="css/data.css?v=3">
 <link rel="stylesheet" href="css/roteiro.css?v=3">
 <link rel="stylesheet" href="css/grupo.css?v=2">
 <link rel="stylesheet" href="css/exclusividades.css?v=2">
@@ -26,7 +26,7 @@
 <link rel="stylesheet" href="css/faq.css?v=2">
 <link rel="stylesheet" href="css/form.css?v=2">
 <link rel="stylesheet" href="css/footer.css?v=1">
-<link rel="stylesheet" href="css/responsive.css?v=3">
+<link rel="stylesheet" href="css/responsive.css?v=4">
 
 <!-- Meta Pixel Code -->
 <script>
@@ -78,6 +78,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <section id="s-hero">
   <div class="hero-bg"></div>
+  <div class="hero-divider" aria-hidden="true">
+    <svg viewBox="0 0 1440 90" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,32 C240,80 480,0 720,28 C960,56 1200,10 1440,40 L1440,90 L0,90 Z" fill="#1e3a52"></path>
+    </svg>
+  </div>
   <div class="wrap"><div class="hero-content">
     <span class="hero-kicker">Circuito Italiano · Saídas 2027</span>
     <h1 class="hero-h1 word-reveal">
@@ -129,15 +134,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 <section id="s-data">
-  <div class="wrap dt-grid">
-    <div>
+  <div class="wrap">
+    <div class="dt-head">
       <span class="overline">Saídas de São Paulo · 2027</span>
-      <h2 class="dt-title from-left">Escolha a sua data</h2>
-      <ul class="dt-list">
-        <li><span>Maio</span><strong>05 a 20/05/27</strong></li>
-        <li><span>Junho</span><strong>09 a 24/06/27</strong></li>
-        <li><span>Setembro</span><strong>01 a 16/09/27</strong></li>
-      </ul>
+      <h2 class="dt-title from-left">Escolha o momento perfeito da sua viagem</h2>
+      <p class="dt-sub from-right">Três janelas de partida — cada uma com uma Itália diferente para descobrir.</p>
+    </div>
+    <div class="dt-cards">
+      <div class="dt-card scale-up">
+        <div class="dt-card-icon">🌸</div>
+        <div class="dt-card-month">Maio</div>
+        <div class="dt-card-range">05 a 20/05/27</div>
+        <div class="dt-card-mood">A Itália em flor — primavera nos vinhedos da Toscana, antes do calor do verão.</div>
+      </div>
+      <div class="dt-card scale-up">
+        <div class="dt-card-icon">☀️</div>
+        <div class="dt-card-month">Junho</div>
+        <div class="dt-card-range">09 a 24/06/27</div>
+        <div class="dt-card-mood">O verão europeu em seu auge dourado — dias longos e claros para explorar.</div>
+      </div>
+      <div class="dt-card scale-up">
+        <div class="dt-card-icon">🍂</div>
+        <div class="dt-card-month">Setembro</div>
+        <div class="dt-card-range">01 a 16/09/27</div>
+        <div class="dt-card-mood">Fim de verão, luz dourada e menos multidões nos pontos mais buscados.</div>
+      </div>
+    </div>
+    <div class="dt-countdown-wrap">
+      <span class="dt-countdown-label">Faltam para a próxima saída</span>
       <div class="cd-timer" id="countdown-timer">
         <div class="cd-unit"><strong data-value="days">00</strong><span>Dias</span></div>
         <div class="cd-unit"><strong data-value="hours">00</strong><span>Horas</span></div>
@@ -145,7 +169,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="cd-unit"><strong data-value="seconds">00</strong><span>Seg</span></div>
       </div>
     </div>
-    <div class="dt-img scale-up"><img src="circuito-italiano-data.jpg" alt="Circuito Italiano"></div>
   </div>
 </section>
 <section id="s-rot">
