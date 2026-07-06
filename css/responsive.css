@@ -17,7 +17,7 @@
   .m3 { grid-column: 3; grid-row: 2; }
   .m4 { grid-column: 1; grid-row: 3; }
   .m5 { grid-column: 2/4; grid-row: 3; }
-  .m6 { display: none; }
+  .m6, .m7, .m8, .m9 { display: none; }
   .gp-content { padding: 52px var(--pad); }
   .gp-h { font-size: 34px; }
 }
