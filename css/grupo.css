@@ -8,15 +8,14 @@
 #s-grupo {
   display: grid;
   grid-template-columns: 52% 48%;
-  align-items: center;
+  min-height: 780px;
   overflow: hidden;
 }
 .gp-mosaic {
   display: grid;
   grid-template-columns: 2fr 1.4fr 1.4fr;
-  grid-template-rows: 190px 190px 180px 180px;
+  grid-template-rows: 200px 200px 190px 190px;
   gap: 5px; position: relative;
-  align-self: center;
 }
 .gp-photo { background-size: cover; background-position: center; overflow: hidden; }
 .m1 { grid-column: 1; grid-row: 1/3; }
@@ -30,19 +29,19 @@
 .m9 { grid-column: 3; grid-row: 4; }
 
 .gp-content {
-  padding: 64px 56px 64px 64px;
+  padding: 28px 48px 28px 48px;
   display: flex; flex-direction: column; justify-content: center;
 }
 .gp-h {
-  font-family: var(--ff-serif); font-size: 40px; font-weight: 700;
-  color: var(--blue); line-height: 1.1; margin-bottom: 10px;
+  font-family: var(--ff-serif); font-size: 36px; font-weight: 700;
+  color: var(--blue); line-height: 1.1; margin-bottom: 8px;
 }
 .gp-h em { font-style: italic; color: var(--orange); }
-.gp-sub { font-size: 15px; line-height: 1.8; color: var(--muted); font-weight: 300; margin-bottom: 32px; }
+.gp-sub { font-size: 14px; line-height: 1.65; color: var(--muted); font-weight: 300; margin-bottom: 20px; }
 
 .gp-stats {
   display: grid; grid-template-columns: repeat(3,1fr);
-  border-top: 2px solid var(--orange); padding-top: 20px; margin-bottom: 32px;
+  border-top: 2px solid var(--orange); padding-top: 14px; margin-bottom: 20px;
 }
 .gp-stat { padding-right: 14px; border-right: 1px solid var(--border); }
 .gp-stat:last-child { border-right: none; padding-right: 0; padding-left: 14px; }
@@ -54,15 +53,15 @@
 .gp-stat-label { font-size: 10.5px; color: var(--muted); font-weight: 400; line-height: 1.4; }
 
 .gp-args { display: flex; flex-direction: column; }
-.gp-arg { padding: 14px 0; border-bottom: 1px solid #f0f0f0; }
+.gp-arg { padding: 9px 0; border-bottom: 1px solid #f0f0f0; }
 .gp-arg:first-child { padding-top: 0; }
 .gp-arg-title {
-  font-size: 13px; font-weight: 700; color: var(--blue);
-  margin-bottom: 5px; line-height: 1.3;
+  font-size: 12.5px; font-weight: 700; color: var(--blue);
+  margin-bottom: 3px; line-height: 1.3;
   display: flex; align-items: flex-start; gap: 10px;
 }
 .gp-arg-title::before {
   content: ''; display: block; width: 16px; height: 2px;
-  background: var(--orange); flex-shrink: 0; margin-top: 7px;
+  background: var(--orange); flex-shrink: 0; margin-top: 6px;
 }
-.gp-arg-text { font-size: 13px; line-height: 1.7; color: var(--muted); font-weight: 300; padding-left: 26px; }
+.gp-arg-text { font-size: 12.5px; line-height: 1.5; color: var(--muted); font-weight: 300; padding-left: 26px; }
