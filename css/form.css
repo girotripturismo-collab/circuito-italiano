@@ -1,5 +1,5 @@
 /* ══ FORM MODULE ════════════════════════ */
-#s-form { background: var(--blue-d); padding: 96px 0; color: var(--white); }
+#s-form { background: var(--blue-d); padding: 64px 0; color: var(--white); }
 .f-head { text-align: center; max-width: 560px; margin: 0 auto 40px; }
 .f-title { font-family: var(--ff-serif); font-size: 34px; color: var(--white); margin-bottom: 12px; }
 .f-sub { font-size: 14px; color: rgba(255,255,255,.7); }

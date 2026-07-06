@@ -1,5 +1,5 @@
 /* ══ GRUPO MODULE ═══════════════════════ */
-#s-grupo { padding: 96px 0; background: var(--white); }
+#s-grupo { padding: 60px 0; background: var(--white); }
 .gp-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
 .gp-title { font-family: var(--ff-serif); font-size: 38px; color: var(--blue); margin-bottom: 14px; }
 .gp-sub { font-size: 15px; color: var(--muted); font-weight: 300; }

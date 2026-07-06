@@ -30,7 +30,7 @@
 
   /* Layout */
   --max:         1200px;
-  --pad:         40px;
+  --pad:         28px;
 
   /* Motion */
   --ease-out:    cubic-bezier(0.16, 1, 0.3, 1);

@@ -2,8 +2,13 @@
    Value stack primeiro, preço depois —
    estratégia definida no PRD §7.2/§2.
 ═══════════════════════════════════════ */
-#s-inv { background: var(--cream); padding: 96px 0; }
+#s-inv { background: var(--cream); padding: 64px 0; }
 .inv-head { text-align: center; max-width: 640px; margin: 0 auto 48px; }
+.inv-urgency {
+  display: inline-block; background: var(--orange); color: var(--white);
+  font-size: 12px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  padding: 7px 18px; margin-bottom: 14px;
+}
 .inv-title { font-family: var(--ff-serif); font-size: 40px; color: var(--blue); margin-bottom: 14px; }
 .inv-items {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 4px 32px;
@@ -20,3 +25,4 @@
 .inv-price-label { font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
 .inv-price-main { font-family: var(--ff-serif); font-size: 48px; color: var(--orange); margin-bottom: 6px; }
 .inv-price-alt { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+.inv-trust { font-size: 12.5px; color: var(--blue); font-weight: 600; margin-top: 16px; }

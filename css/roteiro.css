@@ -1,133 +1,65 @@
-/* ══ ROTEIRO — PINNED HORIZONTAL SCROLL ══
-   7 painéis (Circuito Italiano) — Minas usa 5.
-   .rot-track e .rot-pin-outer recalculados abaixo;
-   roteiro.js não muda (total = panels.length é dinâmico).
+/* ══ ROTEIRO — TIMELINE VERTICAL DENSA ══
+   Redesenho: substitui o pin-scroll de 7 painéis por
+   uma timeline com os 16 dias reais, agrupados em 7
+   regiões (as fotos que já temos viram banners de região).
 ════════════════════════════════════════ */
 
-#s-rot { position: relative; }
-.rot-pin-outer {
-  height: 560vh; /* 7 painéis × 80vh */
-}
-.rot-pin-inner {
-  position: sticky; top: 0;
-  height: 100vh; overflow: hidden;
-  z-index: 6;
-}
-
-.rot-track {
-  display: flex; height: 100%;
-  width: 700vw; /* 7 capítulos */
-  will-change: transform;
-  transition: transform 0.05s linear;
-}
-
-.rot-panel {
-  width: 100vw; height: 100vh; flex-shrink: 0;
-  position: relative; overflow: hidden;
-  display: flex; align-items: flex-end;
-}
-.rot-panel-bg {
-  position: absolute; inset: 0;
-  background-size: cover; background-position: center;
-  transform: scale(1.08);
-  transition: transform 0.8s var(--ease-out);
-}
-.rot-panel.active .rot-panel-bg { transform: scale(1); }
-.rot-panel-ov {
-  position: absolute; inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(14,22,50,.95) 0%,
-    rgba(14,22,50,.6)  40%,
-    rgba(14,22,50,.15) 75%,
-    transparent 100%
-  );
-}
-
-.rot-content {
-  position: relative; z-index: 2;
-  padding: 0 80px 72px;
-  width: 100%; max-width: 860px;
-  margin: 0 auto;
-  text-align: center;
-  opacity: 0; transform: translateY(24px);
-  transition: opacity 0.7s var(--ease-out) 0.2s,
-              transform 0.7s var(--ease-out) 0.2s;
-}
-.rot-panel.active .rot-content { opacity: 1; transform: none; }
-.rot-panel-desc { margin-left: auto; margin-right: auto; }
-.rot-panel-exp  { justify-content: center; }
-
-.rot-panel-day {
-  font-size: 11px; font-weight: 700; letter-spacing: .18em;
-  text-transform: uppercase; color: var(--orange); margin-bottom: 12px; display: block;
-}
-.rot-panel-name {
-  font-family: var(--ff-serif); font-size: 72px; font-weight: 700;
-  color: var(--white); line-height: 1; margin-bottom: 16px;
-  text-shadow: 0 2px 40px rgba(0,0,0,.5);
-}
-.rot-panel-desc {
-  font-size: 16px; font-weight: 300; line-height: 1.75;
-  color: rgba(255,255,255,.72); margin-bottom: 24px;
-  max-width: 560px;
-}
-.rot-panel-exp { display: flex; flex-wrap: wrap; gap: 8px; }
-.rot-panel-tag {
-  font-size: 11px; font-weight: 600; letter-spacing: .04em;
-  color: rgba(255,255,255,.75);
-  border: 1px solid rgba(255,255,255,.22);
-  padding: 5px 14px;
-}
-.rot-panel-tag--hl { background: var(--orange); color: var(--white); border-color: var(--orange); }
-
-.rot-counter {
-  position: absolute; top: 48px; right: 80px; z-index: 10;
-  font-family: var(--ff-serif); font-size: 14px;
-  color: rgba(255,255,255,.45); letter-spacing: .06em;
-}
-.rot-counter span { color: var(--white); font-weight: 700; }
+#s-rot { background: var(--cream); }
 
 .rot-intro {
-  background: var(--cream);
-  padding: 96px var(--pad) 72px;
+  padding: 64px var(--pad) 36px;
   max-width: var(--max); margin: 0 auto;
 }
 .rot-title {
-  font-family: var(--ff-serif); font-size: 52px; font-weight: 700;
-  color: var(--blue); line-height: 1.08; margin-bottom: 12px;
+  font-family: var(--ff-serif); font-size: 44px; font-weight: 700;
+  color: var(--blue); line-height: 1.1; margin-bottom: 10px;
 }
-.rot-sub { font-size: 16px; color: var(--muted); font-weight: 300; }
+.rot-sub { font-size: 15px; color: var(--muted); font-weight: 300; }
 
-.rot-scroll-hint {
-  position: absolute; bottom: 28px; left: 50%;
-  transform: translateX(-50%); z-index: 10;
-  display: flex; flex-direction: column; align-items: center; gap: 8px;
-  opacity: 0; transition: opacity 0.4s ease;
-  color: rgba(255,255,255,.4); font-size: 10px; letter-spacing: .14em; text-transform: uppercase;
-}
-.rot-scroll-hint.show { opacity: 1; }
-.rot-scroll-line {
-  width: 1px; height: 36px;
-  background: linear-gradient(to bottom, var(--orange), transparent);
-  animation: scroll-pulse 2s ease-in-out infinite;
-}
-@keyframes scroll-pulse {
-  0%, 100% { opacity: 0.4; transform: scaleY(1); }
-  50%       { opacity: 1; transform: scaleY(1.2); }
+.rot-timeline {
+  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 56px;
+  display: flex; flex-direction: column; gap: 10px;
 }
 
-/* Dots nav (fixed, top-level in body — see index.html) */
-.rot-dots {
-  position: fixed; right: 24px; top: 50%; transform: translateY(-50%);
-  z-index: 999; display: flex; flex-direction: column; gap: 10px;
-  opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
+.rot-region {
+  background: var(--white); border: 1px solid var(--border);
+  overflow: hidden;
 }
-.rot-dots.visible { opacity: 1; pointer-events: auto; }
-.rot-dot-item {
-  width: 8px; height: 8px; border-radius: 50%;
-  background: rgba(255,255,255,.35); cursor: pointer;
-  border: 1px solid rgba(255,255,255,.5);
-  transition: background 0.2s ease, transform 0.2s ease;
+
+.rot-region-banner {
+  position: relative; height: 200px;
+  background-size: cover; background-position: center;
 }
-.rot-dot-item.active { background: var(--orange); border-color: var(--orange); transform: scale(1.3); }
+.rot-region-banner::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(22,58,115,.88) 0%, rgba(22,58,115,.35) 55%, rgba(22,58,115,.05) 100%);
+}
+.rot-region-label {
+  position: relative; z-index: 2; height: 100%;
+  display: flex; flex-direction: column; justify-content: flex-end;
+  padding: 18px 24px; color: var(--white);
+}
+.rot-region-days {
+  font-size: 11px; font-weight: 700; letter-spacing: .14em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 6px; display: block;
+}
+.rot-region-name {
+  font-family: var(--ff-serif); font-size: 28px; font-weight: 700;
+  text-shadow: 0 2px 20px rgba(0,0,0,.4);
+}
+
+.rot-days { display: flex; flex-direction: column; }
+.rot-day {
+  display: grid; grid-template-columns: 44px 1fr; gap: 16px;
+  align-items: start;
+  padding: 14px 24px; border-top: 1px solid var(--border);
+}
+.rot-day-num {
+  width: 34px; height: 34px; border-radius: 50%;
+  background: var(--blue); color: var(--white);
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--ff-serif); font-weight: 700; font-size: 13px;
+  flex-shrink: 0;
+}
+.rot-day-city { font-weight: 700; color: var(--blue); font-size: 14.5px; margin-bottom: 2px; }
+.rot-day-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }

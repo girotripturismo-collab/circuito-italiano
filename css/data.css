@@ -1,7 +1,7 @@
 /* ══ DATA MODULE ════════════════════════ */
 #s-data {
   background: var(--cream);
-  padding: 88px 0;
+  padding: 56px 0;
 }
 .dt-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; }
 .dt-title { font-family: var(--ff-serif); font-size: 38px; color: var(--blue); margin-bottom: 16px; }

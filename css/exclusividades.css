@@ -2,7 +2,7 @@
    Ticker de texto/ícone via requestAnimationFrame
    (tickers.js) — sem imagem própria.
 ═══════════════════════════════════════ */
-#s-excl { background: var(--off); padding: 80px 0; overflow: hidden; }
+#s-excl { background: var(--off); padding: 56px 0; overflow: hidden; }
 .ex-head { text-align: center; max-width: 640px; margin: 0 auto 40px; }
 .ex-title { font-family: var(--ff-serif); font-size: 34px; color: var(--blue); }
 .ex-track { display: flex; gap: 16px; width: max-content; }

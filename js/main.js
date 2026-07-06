@@ -2,7 +2,6 @@ import {
   initHeader,
   initReveal,
   initStrips,
-  initRoteiro,
   initCountdown,
   initFAQ,
   initSmoothScroll,
@@ -14,7 +13,6 @@ document.addEventListener('DOMContentLoaded', () => {
   initHeader();
   initReveal();
   initStrips();
-  initRoteiro();
   initCountdown();
   initFAQ();
   initSmoothScroll();
