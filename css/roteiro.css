@@ -1,65 +1,88 @@
-/* ══ ROTEIRO — TIMELINE VERTICAL DENSA ══
-   Redesenho: substitui o pin-scroll de 7 painéis por
-   uma timeline com os 16 dias reais, agrupados em 7
-   regiões (as fotos que já temos viram banners de região).
+/* ══ ROTEIRO — TIMELINE ACCORDION ══════
+   Mesmo padrão do México: lista vertical com
+   selo do dia + foto, abre/fecha ao clicar (igual FAQ).
 ════════════════════════════════════════ */
 
 #s-rot { background: var(--cream); }
 
 .rot-intro {
-  padding: 64px var(--pad) 36px;
+  background: var(--cream);
+  padding: 64px var(--pad) 40px;
   max-width: var(--max); margin: 0 auto;
 }
 .rot-title {
-  font-family: var(--ff-serif); font-size: 44px; font-weight: 700;
-  color: var(--blue); line-height: 1.1; margin-bottom: 10px;
+  font-family: var(--ff-serif); font-size: 40px; font-weight: 700;
+  color: var(--blue); line-height: 1.15; margin-bottom: 10px;
 }
 .rot-sub { font-size: 15px; color: var(--muted); font-weight: 300; }
 
-.rot-timeline {
-  max-width: var(--max); margin: 0 auto; padding: 0 var(--pad) 56px;
-  display: flex; flex-direction: column; gap: 10px;
+.rot-list {
+  position: relative;
+  padding-bottom: 48px;
+}
+.rot-list::before {
+  content: '';
+  position: absolute;
+  top: 36px; bottom: 36px; left: 36px;
+  width: 1px;
+  background: var(--border);
+  z-index: 0;
 }
 
-.rot-region {
-  background: var(--white); border: 1px solid var(--border);
-  overflow: hidden;
+.rot-item { border-bottom: 1px solid var(--border); }
+.rot-item:first-child { border-top: 1px solid var(--border); }
+
+.rot-q {
+  display: flex; align-items: center; gap: 20px;
+  width: 100%; padding: 18px 0;
+  background: none; border: none; text-align: left; cursor: pointer;
 }
 
-.rot-region-banner {
-  position: relative; height: 200px;
-  background-size: cover; background-position: center;
+.rot-thumb {
+  position: relative; z-index: 1; flex-shrink: 0;
+  width: 64px; height: 64px; border-radius: 6px; overflow: hidden;
+  background: var(--cream); box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
-.rot-region-banner::after {
-  content: ''; position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(22,58,115,.88) 0%, rgba(22,58,115,.35) 55%, rgba(22,58,115,.05) 100%);
-}
-.rot-region-label {
-  position: relative; z-index: 2; height: 100%;
-  display: flex; flex-direction: column; justify-content: flex-end;
-  padding: 18px 24px; color: var(--white);
-}
-.rot-region-days {
-  font-size: 11px; font-weight: 700; letter-spacing: .14em;
-  text-transform: uppercase; color: var(--orange); margin-bottom: 6px; display: block;
-}
-.rot-region-name {
-  font-family: var(--ff-serif); font-size: 28px; font-weight: 700;
-  text-shadow: 0 2px 20px rgba(0,0,0,.4);
-}
-
-.rot-days { display: flex; flex-direction: column; }
-.rot-day {
-  display: grid; grid-template-columns: 44px 1fr; gap: 16px;
-  align-items: start;
-  padding: 14px 24px; border-top: 1px solid var(--border);
-}
-.rot-day-num {
-  width: 34px; height: 34px; border-radius: 50%;
-  background: var(--blue); color: var(--white);
+.rot-thumb img { display: block; width: 100%; height: 100%; object-fit: cover; }
+.rot-day-badge {
+  position: absolute; right: -6px; bottom: -6px;
+  width: 26px; height: 26px; border-radius: 50%;
+  background: var(--blue); border: 2px solid var(--cream); color: var(--white);
+  font-family: var(--ff-serif); font-weight: 700; font-size: 10.5px;
   display: flex; align-items: center; justify-content: center;
-  font-family: var(--ff-serif); font-weight: 700; font-size: 13px;
-  flex-shrink: 0;
 }
-.rot-day-city { font-weight: 700; color: var(--blue); font-size: 14.5px; margin-bottom: 2px; }
-.rot-day-desc { font-size: 13px; color: var(--muted); line-height: 1.55; }
+
+.rot-q-text { flex: 1; min-width: 0; }
+.rot-q-date {
+  display: block; font-size: 11px; font-weight: 700; letter-spacing: .1em;
+  text-transform: uppercase; color: var(--orange); margin-bottom: 4px;
+}
+.rot-q-title {
+  display: block; font-family: var(--ff-serif); font-size: 17px; font-weight: 700;
+  color: var(--blue); line-height: 1.3;
+}
+.rot-q-teaser {
+  display: block; font-size: 12.5px; font-weight: 300; color: var(--muted);
+  margin-top: 4px; line-height: 1.45;
+}
+
+.rot-tog {
+  flex-shrink: 0; width: 30px; height: 30px;
+  border: 1.5px solid var(--border); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 17px; color: var(--muted);
+  transition: transform .3s ease, background .2s ease, border-color .2s ease, color .2s ease;
+}
+.rot-item.open .rot-tog {
+  transform: rotate(45deg);
+  background: var(--orange); border-color: var(--orange); color: var(--white);
+}
+
+.rot-ans {
+  max-height: 0; overflow: hidden;
+  padding-left: 84px;
+  transition: max-height .5s ease;
+}
+.rot-item.open .rot-ans { max-height: 400px; padding-bottom: 22px; }
+.rot-ans p { font-size: 13.5px; line-height: 1.7; font-weight: 300; color: var(--muted); }
+.rot-ans strong { font-weight: 700; color: var(--text); }

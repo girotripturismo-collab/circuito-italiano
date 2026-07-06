@@ -19,11 +19,11 @@
   .ves-strips { height: 280px; flex-direction: column; }
   .dv-title { font-size: 30px; }
   .dt-grid { grid-template-columns: 1fr; gap: 32px; }
-  .rot-title { font-size: 32px; }
-  .rot-region-banner { height: 150px; }
-  .rot-region-name { font-size: 22px; }
-  .rot-day { grid-template-columns: 34px 1fr; gap: 12px; padding: 12px 16px; }
-  .rot-day-num { width: 28px; height: 28px; font-size: 12px; }
+  .rot-title { font-size: 28px; }
+  .rot-thumb { width: 52px; height: 52px; }
+  .rot-q { gap: 14px; }
+  .rot-q-title { font-size: 15px; }
+  .rot-ans { padding-left: 0; }
   .gp-grid { grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(3, 160px); }
   .inv-items { grid-template-columns: 1fr; }
   .inv-price-main { font-size: 36px; }
