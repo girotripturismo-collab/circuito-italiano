@@ -151,13 +151,23 @@ export function send() {
 
 function applyWppMask(input) {
   let d = input.value.replace(/\D/g, '');
-  if (d.startsWith('55') && d.length > 11) d = d.slice(2);
+  // Remove prefixos de discagem antes de formatar: o 0 de tronco (021...) e o
+  // DDI 55 colado do WhatsApp. Sem isso o "0" virava DDD e deslocava o numero
+  // inteiro (ex: "021 9812-5137" chegava no RD como "(02) 19812-5137").
+  let anterior;
+  do {
+    anterior = d;
+    d = d.replace(/^0+/, '');
+    // DDD 55 (Santa Maria) e valido: so tira o 55 quando sobra numero demais
+    if (d.startsWith('55') && d.length > 11) d = d.slice(2);
+  } while (d !== anterior);
   d = d.slice(0, 11);
   let v = '';
-  if (d.length === 0)      v = '';
-  else if (d.length <= 2)  v = '(' + d;
-  else if (d.length <= 7)  v = '(' + d.slice(0,2) + ') ' + d.slice(2);
-  else                     v = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+  if (d.length === 0) v = '';
+  else if (d.length <= 2) v = '(' + d;
+  else if (d.length <= 6) v = '(' + d.slice(0, 2) + ') ' + d.slice(2);
+  else if (d.length <= 10) v = '(' + d.slice(0, 2) + ') ' + d.slice(2, 6) + '-' + d.slice(6);
+  else v = '(' + d.slice(0, 2) + ') ' + d.slice(2, 7) + '-' + d.slice(7);
   input.value = v;
 }
 

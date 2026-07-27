@@ -8,7 +8,7 @@ import {
   initSmoothScroll,
   initFormActions,
   initTickers
-} from './index.js';
+} from './index.js?v=2';
 
 document.addEventListener('DOMContentLoaded', () => {
   initHeader();
