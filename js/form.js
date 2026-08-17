@@ -14,6 +14,15 @@ function trackMeta(event, params) {
   }
 }
 
+// Dispara evento personalizado do pixel do OpenAI Ads. O nome precisa bater
+// exatamente com o "Evento base" cadastrado em ads.openai.com > Conversoes,
+// senao a conversao nunca e reconhecida.
+function trackOpenAI(customEventName) {
+  if (typeof window.oaiq === 'function') {
+    window.oaiq('measure', 'custom', { type: 'custom' }, { custom_event_name: customEventName });
+  }
+}
+
 export function nextStep() {
   const nome = getValue('nome');
   const email = getValue('email');
@@ -145,6 +154,10 @@ export function send() {
     content_name: 'LP Circuito Italiano',
     content_category: 'Roteiro Circuito Italiano'
   });
+
+  // OpenAI Ads: evento por LP, para a campanha do Circuito Italiano otimizar so
+  // com os leads desta pagina (o painel nao permite filtrar conversao por URL)
+  trackOpenAI('lead_italia');
 
   return true;
 }
